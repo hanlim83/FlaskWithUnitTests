@@ -107,7 +107,7 @@
             methods: {
                 submitForm: function() {
                 event.preventDefault();
-                axios.post('http://localhost:5000/consultations', {
+                axios.post('/consultations', {
                         doctor_id: this.doctor_id,
                         patient_id: this.patient_id,
                         diagnosis: this.diagnosis,
@@ -122,7 +122,7 @@
                 }
             },
             mounted: function() {
-                axios.get('http://localhost:5000/doctors')
+                axios.get('/doctors')
                     .then(response => {
                         this.doctors = response.data.data;
                     })
@@ -133,7 +133,7 @@
                     if (this.search === '') {
                         this.patients = []
                     } else {
-                        axios.get('http://localhost:5000/patients?name=' + this.search)
+                        axios.get('/patients?name=' + this.search)
                         .then(response => {
                             this.patients = response.data.data;
                         })

@@ -2,21 +2,18 @@
 A dummy flask application with unit tests for IS212 Software Project Management
 
 # Installation Guide
-1. set up and run a WAMP or MAMP server
-2.  execute the contents of 'is212_example.sql' in phpMyAdmin, i.e. at:
--  http://localhost/phpmyadmin
--  http://localhost/phpMyAdmin
-
-3. find your web server's root directory (e.g. C:\wamp\www) and create a
-    folder called 'is212'. Copy the contents of 'htdocs' into 'is212'.
-4. if you don't already have Flask installed, do:
+1. Create a virutal environment: `python -m venv venv`
+2. Install Python dependencies:
 ```
-	   python -m pip install flask
-	   python -m pip install flask_cors
-	   python -m pip install Flask-SQLAlchemy
-	   python -m pip install mysql-connector-python
+chmod +x venv\bin\activate
+venv\bin\activate
+python install -r requirements.txt
 ```
-
-5. in the 'flask' directory, run "python app.py" in a terminal. If it fails to run, open app.py in an editor and check that the DB connection string is correct (e.g. port 3306 vs. 8889)
-
-6. go to http://localhost/is212 where the application should be working!
+3. Run the SQL Script to set up the local MySQL database:  `sudo mysql -u root < is212_example.sql`
+4. Run the application to verify that it works: `python app.py`
+5. Run Coverage Tests as needed:
+```
+python -m coverage run test_unit.py 
+python -m coverage run test_integration.py 
+```
+6. Generate the coverage report: `python -m coverage html`

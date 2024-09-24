@@ -79,7 +79,7 @@
         };
     },
     created: function () {
-        axios.get('http://localhost:5000/persons/' + this.id)
+        axios.get('/persons/' + this.id)
             .then(response => {
                 this.title = response.data.data.title;
                 this.name = response.data.data.name;
@@ -93,7 +93,7 @@
                 consultations: []
             },
             mounted: function() {
-                axios.get('http://localhost:5000/consultations')
+                axios.get('/consultations')
                     .then(response => {
                         this.consultations = response.data.data;
                     })
