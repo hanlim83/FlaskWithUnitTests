@@ -2,7 +2,7 @@
 A dummy flask application with unit tests for IS212 Software Project Management
 
 # Installation Guide
-1. Create a virutal environment: `python -m venv venv`
+1. Create a virtual environment: `python -m venv venv`
 2. Install Python dependencies:
 ```
 chmod +x venv\bin\activate
