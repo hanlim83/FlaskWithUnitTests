@@ -9,7 +9,7 @@ A dummy flask application with unit tests for IS212 Software Project Management
 ```
 chmod +x venv\bin\activate
 venv\bin\activate
-python install -r requirements.txt
+pip install -r requirements.txt
 ```
 3. Run the SQL Script to set up the local MySQL database:  `sudo mysql -u root < is212_example.sql`
 
